@@ -1,0 +1,1 @@
+Figma: https://www.figma.com/design/NgHF5WfDfBpQg8AG7nND3g/PlanificadorWeb?node-id=1-2&t=PkLOSydG9thZ8Gmj-0
