@@ -1,0 +1,26 @@
+:root {
+
+    /* Fondo */
+    --background: #2E3440;
+    --surface: #3B4252;
+    --surface-light: #434C5E;
+
+    /* Colores principales */
+    --primary: #88C0D0;
+    --primary-hover: #81A1C1;
+
+    /* Estados */
+    --success: #A3BE8C;
+    --warning: #EBCB8B;
+    --danger: #BF616A;
+    --info: #5E81AC;
+
+    /* Texto */
+    --text-primary: #ECEFF4;
+    --text-secondary: #D8DEE9;
+
+    /* Bordes */
+    --border: #4C566A;
+
+}
+
