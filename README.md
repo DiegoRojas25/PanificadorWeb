@@ -1,2 +1,3 @@
 Figma: https://www.figma.com/design/NgHF5WfDfBpQg8AG7nND3g/PlanificadorWeb?node-id=1-2&t=PkLOSydG9thZ8Gmj-0
 Trello: https://trello.com/b/9kCRLQrB/planificador-web
+Trello: https://trello.com/b/9kCRLQrB/planificador-web
