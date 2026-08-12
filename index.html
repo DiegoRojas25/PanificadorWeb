@@ -13,19 +13,163 @@
 
 <body>
 
+    <header class="header">
+        <div class="container">
+            <div class="row align-items-center">
 
-    <header>
+                <div class="col">
+                    <p class="header-label mb-0">
+                        Gestor de tareas
+                    </p>
 
+                    <h1 class="header-title mb-0">
+                        Título
+                    </h1>
+
+                    <p class="header-date mb-0">
+                        fecha
+                    </p>
+                </div>
+
+
+                <div class="col-auto">
+                    <div class="progress-container">
+                        <div class="progress-circle">
+                            <span>33%</span>
+                        </div>
+                        <p class="progress-text mb-0">
+                            Porcentaje<br>
+                            completado
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </header>
 
-    <main>
+    <main class="main-container">
 
+        <section class="statistics mb-4">
+            <div class="row g-0">
 
+                <div class="col-4 statistic border-end">
+                    <span id="completadas" class="statistic-number">
+                        0
+                    </span>
+                    <span class="statistic-label">
+                        Completadas
+                    </span>
+                </div>
 
-        <!--tarjetas de tareas -->
-        <div class="contenedor-tarjetas container">
+                <div class="col-4 statistic border-end">
+                    <span id="pendientes" class="statistic-number">
+                        0
+                    </span>
+                    <span class="statistic-label">
+                        Pendientes
+                    </span>
+                </div>
 
-            <!-- Targeta 1 -->
+                <div class="col-4 statistic">
+                    <span id="expiradas" class="statistic-number">
+                        0
+                    </span>
+                    <span class="statistic-label">
+                        Expiradas
+                    </span>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="task-form">
+
+            <div id="alertaError" class="alert alert-danger d-none" role="alert"></div>
+
+            <h2 class="task-form-title">
+                Nueva tarea
+            </h2>
+
+            <div class="mb-2">
+                <label for="titulo" class="form-label">
+                    Título
+                </label>
+
+                <input type="text" id="titulo" class="form-control">
+            </div>
+
+            <div class="mb-2">
+                <label for="descripcion" class="form-label">
+                    Descripción:
+                </label>
+
+                <textarea id="descripcion" class="form-control" rows="3"></textarea>
+            </div>
+
+            <div class="row g-2 align-items-end">
+
+                <div class="col-6">
+                    <label class="form-label">
+                        Prioridad
+                    </label>
+                    <div class="row g-1">
+
+                        <div class="col">
+                            <button type="button" class="priority-button" data-priority="Alta">
+                                Alta
+                            </button>
+                        </div>
+
+                        <div class="col">
+                            <button type="button" class="priority-button" data-priority="Media">
+                                Media
+                            </button>
+                        </div>
+
+                        <div class="col">
+                            <button type="button" class="priority-button" data-priority="Baja">
+                                Baja
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <label for="fecha" class="form-label">
+                        Fecha Límite
+                    </label>
+                    <input type="date" id="fecha" class="form-control">
+                </div>
+
+            </div>
+
+            <div class="text-center mt-3">
+                <button type="button" id="btnAgregarTarea" class="btn-add-task">
+                    + Agregar tarea
+                </button>
+            </div>
+        </section>
+
+        <section class="task-filters mt-3">
+
+            <button class="filter-button active">
+                todas
+            </button>
+
+            <button class="filter-button">
+                Pendientes
+            </button>
+
+            <button class="filter-button">
+                Completadas
+            </button>
+
+        </section>
+
+        <div class="contenedor-tarjetas ">
+
             <div class="tarjeta border-0 rounded-4 bg-light p-3 shadow-sm mt-3">
                 <div class="d-flex align-items-start">
 
@@ -59,7 +203,6 @@
                 </div>
             </div>
 
-            <!-- Targeta 2 -->
             <div class="tarjeta border-0 rounded-4 bg-light p-3 shadow-sm mt-3">
                 <div class="d-flex align-items-start">
 
@@ -93,7 +236,6 @@
                 </div>
             </div>
 
-            <!-- Targeta 3 -->
             <div class="tarjeta border-0 rounded-4 bg-light p-3 shadow-sm mt-3">
                 <div class="d-flex align-items-start">
 
@@ -127,7 +269,6 @@
                 </div>
             </div>
 
-            <!-- Targeta 4 -->
             <div class="tarjeta border-0 rounded-4 bg-light p-3 shadow-sm mt-3">
                 <div class="d-flex align-items-start">
 
@@ -161,7 +302,6 @@
                 </div>
             </div>
 
-            <!-- Targeta 5 -->
             <div class="tarjeta border-0 rounded-4 bg-light p-3 shadow-sm mt-3">
                 <div class="d-flex align-items-start">
 
@@ -183,7 +323,8 @@
                         </div>
 
                         <p class="text-secondary mb-2">
-                            Validar las nuevas solicitudes recibidas y asignarlas a los miembros del equipo correspondientes.
+                            Validar las nuevas solicitudes recibidas y asignarlas a los miembros del equipo
+                            correspondientes.
                         </p>
 
                         <small class="text-dark">
@@ -197,15 +338,12 @@
 
         </div>
 
-
-
     </main>
-
 
     <footer>
 
     </footer>
-    
+
     <script src="./app.js"></script>
 </body>
 
