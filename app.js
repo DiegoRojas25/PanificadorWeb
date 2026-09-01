@@ -1,37 +1,22 @@
-const tituloInput = document.querySelector("#titulo");
-const descripcionInput = document.querySelector("#descripcion");
-const fechaInput = document.querySelector("#fecha");
-const btnAgregarTarea = document.querySelector("#btnAgregarTarea");
+const tituloInput = document.querySelector("#inpTitulo");
+const descripcionInput = document.querySelector("#inpDesc");
+const fechaInput = document.querySelector("#inpFecha");
 const alertaError = document.querySelector("#alertaError");
-const botonesPrioridad = document.querySelectorAll(".priority-button");
+const formTarea = document.querySelector("#formTarea"); 
 
-let prioridadSeleccionada = "";
-
-botonesPrioridad.forEach(boton => {
-
-    boton.addEventListener("click", () => {
-        prioridadSeleccionada = boton.dataset.priority;
-        console.log("Prioridad:", prioridadSeleccionada);
-    });
-
-});
 
 function validFormFieldInput(data) {
-
     const errores = [];
-
+    
     if (!data.titulo.trim()) {
         errores.push("El título es obligatorio.");
     }
-
     if (!data.descripcion.trim()) {
         errores.push("La descripción es obligatoria.");
     }
-
     if (!data.fecha) {
         errores.push("Debes seleccionar una fecha límite.");
     }
-
     if (!data.prioridad) {
         errores.push("Debes seleccionar una prioridad.");
     }
@@ -39,18 +24,18 @@ function validFormFieldInput(data) {
     return errores;
 }
 
-btnAgregarTarea.addEventListener("click", () => {
+formTarea.addEventListener("submit", (e) => {
+
+    e.preventDefault();
+
+    const prioridadSeleccionada = document.querySelector('input[name="prioridad"]:checked').id;
 
     const data = {
-
         titulo: tituloInput.value,
         descripcion: descripcionInput.value,
         fecha: fechaInput.value,
         prioridad: prioridadSeleccionada
-
     };
-
-    console.log(data);
 
     const errores = validFormFieldInput(data);
 
@@ -58,12 +43,10 @@ btnAgregarTarea.addEventListener("click", () => {
 
         alertaError.classList.remove("d-none");
         alertaError.innerHTML = errores.join("<br>");
-
         return;
     }
 
     alertaError.classList.add("d-none");
-
-    console.log("Formulario válido");
-
+    console.log("Formulario válido. Datos:", data);
+    
 });

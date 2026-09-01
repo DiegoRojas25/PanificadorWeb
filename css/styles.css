@@ -1,254 +1,217 @@
 :root {
-
-    --background: #e9eaec;
-    --header: #bdbdbd;
-    --surface: #bcbcbc;
-    --input: #f1f1f1;
-    --text: #111111;
-    --border: #a8a8a8;
-
+    --color-alta: #ef5350; /* Rojo */
+    --color-media: #ffca28; /* Amarillo */
+    --color-baja: #66bb6a; /* Verde */
+    --color-azul-oscuro: #1e3046;
+    --color-azul-medio: #2d4059;
+    --color-naranja: #e97639;
+    --color-fondo: #f6f3eb;
+    --color-texto-strikethrough: #a0a0a0;
 }
 
 body {
-
-    margin: 0;
-    background-color: var(--background);
-    color: var(--text);
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-fondo);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-.header {
-    width: 60%;
+.container-desktop {
+    max-width: 1100px;
     margin: 0 auto;
-    background-color: var(--header);
-    padding: 12px 0 10px;
 }
 
-
-.header-label {
-    font-size: 16px;
-    font-weight: 700;
+.fondo-principal {
+    background-color: var(--color-fondo);
 }
 
-.header-title {
-
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 0.95;
-
+.header-principal {
+    background-color: var(--color-azul-oscuro);
+    height: 120px;
 }
 
-.header-date {
-
-    font-size: 12px;
-}
-
-.progress-container {
-
-    text-align: center;
-}
+.text-naranja { color: var(--color-naranja); }
+.text-azul-oscuro { color: var(--color-azul-oscuro); }
+.text-verde { color: var(--color-baja); }
+.text-muted-light { color: #8e9dae; font-size: 0.9rem; }
 
 
-.progress-circle {
-
-    width: 70px;
-    height: 70px;
+.progreso-circular {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    border: 6px solid #f2f2f2;
+    background: conic-gradient(var(--color-naranja) 40%, #354a63 0deg);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
-
 }
 
-
-.progress-circle span {
-    font-size: 20px;
-    font-weight: 700;
-}
-
-
-.progress-text {
-    font-size: 12px;
-    line-height: 1.1;
-    margin-top: 5px !important;
-
-}
-
-.main-container {
-
-    width: 60%;
-    margin: 0 auto;
-    padding: 16px 0 30px;
-
-}
-
-.statistics {
-
-    background-color: var(--surface);
-    border-radius: 11px;
-    overflow: hidden;
-}
-
-
-.statistic {
-    height: 64px;
+.progreso-interno {
+    width: 46px;
+    height: 46px;
+    background-color: var(--color-azul-oscuro);
+    border-radius: 50%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-
+    font-size: 0.8rem;
 }
 
-
-.statistic-number {
-    font-size: 30px;
-    line-height: 1;
-}
-
-
-.statistic-label {
-    font-size: 11px;
-    margin-top: 3px;
-
-}
-
-.task-form {
-    background-color: var(--surface);
-    border-radius: 11px;
-    padding: 14px 28px 22px;
-}
-
-
-.task-form-title {
-
-    font-size: 21px;
-    font-weight: 700;
-    margin-bottom: 4px;
-
-}
-
-.form-label {
-
-    font-size: 10px;
-    font-weight: 700;
-    margin-bottom: 3px;
+.card-custom {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
 }
 
 .form-control {
-    background-color: var(--input);
-    border: none;
-    border-radius: 9px;
-    font-size: 13px;
-
+    background-color: #fcfbfa;
+    border-color: #e5e0d8;
 }
-
 
 .form-control:focus {
-
-    background-color: white;
     box-shadow: none;
-    border: 1px solid var(--border);
-
+    border-color: var(--color-azul-oscuro);
 }
 
-textarea.form-control {
-    resize: none;
+.btn-agregar {
+    background-color: #f25c54;
+    color: white;
+    border-radius: 8px;
+    padding: 10px;
 }
+.btn-agregar:hover { background-color: #e04b43; color: white; }
 
-.priority-button {
-
-    width: 100%;
-    height: 24px;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--input);
-    font-size: 10px;
-
-}
-
-.priority-button:hover {
-    background-color: #dedede;
-}
-
-.btn-add-task {
-
-    width: 45%;
-    height: 23px;
-    border: none;
-    border-radius: 4px;
-    background-color: var(--input);
-    font-size: 10px;
+.btn-outline-prioridad {
+    border: 1px solid #dee2e6;
+    color: #6c757d;
+    background-color: white;
+    border-radius: 8px;
     font-weight: 600;
-
+    font-size: 0.9rem;
 }
 
-
-.btn-add-task:hover {
-
-    background-color: #dedede;
-
+.btn-check:checked + .btn-prioridad-alta {
+    background-color: rgba(239, 83, 80, 0.1);
+    border-color: var(--color-alta);
+    color: var(--color-alta);
 }
 
-.task-filters {
+.btn-check:checked + .btn-prioridad-media {
+    background-color: rgba(255, 202, 40, 0.1);
+    border-color: var(--color-media);
+    color: #d4a017; 
+}
 
-    display: inline-flex;
-    background-color: var(--surface);
+.btn-check:checked + .btn-prioridad-baja {
+    background-color: rgba(102, 187, 106, 0.1);
+    border-color: var(--color-baja);
+    color: var(--color-baja);
+}
+
+.card-resumen {
+    border: none;
+    border-radius: 12px;
+}
+.bg-azul { background-color: var(--color-azul-medio); }
+.bg-naranja { background-color: var(--color-naranja); }
+.bg-rojo { background-color: #f25c54; }
+
+.filter-container {
+    background-color: white;
+    border-radius: 8px;
+    
+}
+.btn-filtro {
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4a4a4a;
     border-radius: 6px;
-    padding: 2px;
-
+    padding: 5px 15px;
+}
+.btn-filtro.active {
+    background-color: var(--color-azul-medio);
+    color: white;
 }
 
-.filter-button {
+.lista-tareas-container {
+    max-height: 480px; 
+    overflow-y: auto;
+}
 
+.lista-tareas-container::-webkit-scrollbar {
+    width: 8px;
+}
+.lista-tareas-container::-webkit-scrollbar-track {
+    background: #e9e4d9;
+    border-radius: 10px;
+}
+.lista-tareas-container::-webkit-scrollbar-thumb {
+    background-color: #c4c4c4;
+    border-radius: 10px;
+}
+.lista-tareas-container::-webkit-scrollbar-thumb:hover {
+    background-color: #a0a0a0;
+}
+
+.card-tarea {
     border: none;
-    background: transparent;
-    padding: 4px 12px;
-    font-size: 10px;
-    border-radius: 4px;
-
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
 }
 
-.filter-button.active {
-
-    background-color: #d8d8d8;
-    font-weight: 600;
-
+.chk-tarea {
+    width: 1.3rem;
+    height: 1.3rem;
+    border-color: #d1d1d1;
+    cursor: pointer;
+}
+.chk-tarea:checked {
+    background-color: var(--color-azul-medio);
+    border-color: var(--color-azul-medio);
 }
 
+.badge-prioridad {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 50rem;
+    padding: 2px 8px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    background-color: white;
+}
 
-@media (max-width: 576px) {
+.badge-prioridad::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
 
-    .main-container {
-        width: 90%;
-    }
+.badge-alta { border-color: var(--color-alta); color: var(--color-alta); }
+.badge-alta::before { background-color: var(--color-alta); }
 
-    .header {
-        width: 90%;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
+.badge-media { border-color: var(--color-media); color: #d4a017; }
+.badge-media::before { background-color: var(--color-media); }
 
-    .header-title {
+.badge-baja { border-color: var(--color-baja); color: var(--color-baja); }
+.badge-baja::before { background-color: var(--color-baja); }
 
-        font-size: 30px;
+.tarea-completada .text-strikethrough {
+    text-decoration: line-through;
+    color: var(--color-texto-strikethrough) !important;
+}
+.tarea-completada .text-strikethrough h6,
+.tarea-completada .text-strikethrough p {
+    color: var(--color-texto-strikethrough) !important;
+}
+.tarea-completada .badge-prioridad {
+    opacity: 0.5;
+}
 
-    }
-
-    .progress-circle {
-        width: 60px;
-        height: 60px;
-    }
-
-    .task-form {
-        padding-left: 18px;
-        padding-right: 18px;
-    }
-
-    .btn-add-task {
-
-        width: 60%;
-    }
-
+.tarea-vencida {
+    background-color: #fff5f5;
+    border: 1px solid #ffe3e3;
 }
