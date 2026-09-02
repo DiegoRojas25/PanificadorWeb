@@ -17,6 +17,36 @@ class TaskManager {
         };
 
         this.tasks.push(newTask);
+        this.save();
         return newTask;
+    }
+
+    deleteTask(taskId) {
+        const newTasks = [];
+        
+        for (let task of this.tasks) {
+            if (task.id !== taskId) {
+                newTasks.push(task);
+            }
+        }
+
+        this.tasks = newTasks;
+    }
+
+    save() {
+        const tasksJson = JSON.stringify(this.tasks);
+        localStorage.setItem('tasks', tasksJson);
+        localStorage.setItem('currentId', String(this.currentId));
+    }
+
+    load() {
+        if (localStorage.getItem('tasks')) {
+            const tasksJson = localStorage.getItem('tasks');
+            this.tasks = JSON.parse(tasksJson);
+        }
+        if (localStorage.getItem('currentId')) {
+            const currentIdStr = localStorage.getItem('currentId');
+            this.currentId = Number(currentIdStr);
+        }
     }
 }
