@@ -54,7 +54,9 @@ PLANIFICADOR/
 ├── css/
 │   └── styles.css
 │
-├── app.js
+├── js/
+│   ├── index.js
+│   └── taskManager.js
 │
 ├── index.html
 │

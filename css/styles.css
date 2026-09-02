@@ -120,19 +120,19 @@ body {
 }
 
 .btn-prioridad-alta:hover {
-    background-color: rgba(239, 83, 80, 0.3) !important;
+    background-color: rgba(239, 83, 80, 0.15) !important;
     border-color: var(--color-alta) !important;
     color: var(--color-alta) !important;
 }
 
 .btn-prioridad-media:hover {
-    background-color: rgba(255, 202, 40, 0.3) !important;
+    background-color: rgba(255, 202, 40, 0.15) !important;
     border-color: var(--color-media) !important;
     color: #d4a017 !important;
 }
 
 .btn-prioridad-baja:hover {
-    background-color: rgba(102, 187, 106, 0.3) !important;
+    background-color: rgba(102, 187, 106, 0.15) !important;
     border-color: var(--color-baja) !important;
     color: var(--color-baja) !important;
 }
@@ -278,4 +278,8 @@ body {
 }
 .badge-vencida::before {
   background-color: var(--color-alta);
+}
+
+#sinTareasMsg i {
+    opacity: 0.5;
 }
