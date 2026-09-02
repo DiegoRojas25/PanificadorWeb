@@ -37,6 +37,7 @@ Archivo utilizado para el diseño y wireframe del proyecto.
 Nota: Tuve un problema en mi cuenta de figma, en el cual me retiró los permisos para editar de todos mis archivos, por lo que tuve que crear un archivo nuevo para mi planificador.
 
 **Enlace Anterior:** [https://www.figma.com/design/NgHF5WfDfBpQg8AG7nND3g/PlanificadorWeb?node-id=1-2&t=PkLOSydG9thZ8Gmj-0](#)
+
 **Enlace Nuevo:** [https://www.figma.com/design/zKttngtBoyvarn9CfVOiNW/PlanificadorWeb?node-id=0-1&t=iOmyFRvYiMzISbQX-1](#)
 
 ### Demo

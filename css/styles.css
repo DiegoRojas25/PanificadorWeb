@@ -1,217 +1,281 @@
 :root {
-    --color-alta: #ef5350; /* Rojo */
-    --color-media: #ffca28; /* Amarillo */
-    --color-baja: #66bb6a; /* Verde */
-    --color-azul-oscuro: #1e3046;
-    --color-azul-medio: #2d4059;
-    --color-naranja: #e97639;
-    --color-fondo: #f6f3eb;
-    --color-texto-strikethrough: #a0a0a0;
+  --color-alta: #ef5350;
+  --color-media: #ffca28;
+  --color-baja: #66bb6a;
+  --color-azul-oscuro: #1e3046;
+  --color-azul-medio: #2d4059;
+  --color-naranja: #e97639;
+  --color-fondo: #f6f3eb;
+  --color-texto-strikethrough: #a0a0a0;
 }
 
 body {
-    background-color: var(--color-fondo);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--color-fondo);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
 }
 
 .container-desktop {
-    max-width: 1100px;
-    margin: 0 auto;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .fondo-principal {
-    background-color: var(--color-fondo);
+  background-color: var(--color-fondo);
 }
 
 .header-principal {
-    background-color: var(--color-azul-oscuro);
-    height: 120px;
+  background-color: var(--color-azul-oscuro);
+  height: 120px;
 }
 
-.text-naranja { color: var(--color-naranja); }
-.text-azul-oscuro { color: var(--color-azul-oscuro); }
-.text-verde { color: var(--color-baja); }
-.text-muted-light { color: #8e9dae; font-size: 0.9rem; }
-
+.text-naranja {
+  color: var(--color-naranja);
+}
+.text-azul-oscuro {
+  color: var(--color-azul-oscuro);
+}
+.text-verde {
+  color: var(--color-baja);
+}
+.text-muted-light {
+  color: #8e9dae;
+  font-size: 0.9rem;
+}
 
 .progreso-circular {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: conic-gradient(var(--color-naranja) 40%, #354a63 0deg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: conic-gradient(var(--color-naranja) 40%, #354a63 0deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .progreso-interno {
-    width: 46px;
-    height: 46px;
-    background-color: var(--color-azul-oscuro);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
+  width: 46px;
+  height: 46px;
+  background-color: var(--color-azul-oscuro);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
 }
 
 .card-custom {
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 }
 
 .form-control {
-    background-color: #fcfbfa;
-    border-color: #e5e0d8;
+  background-color: #fcfbfa;
+  border-color: #e5e0d8;
 }
 
 .form-control:focus {
-    box-shadow: none;
-    border-color: var(--color-azul-oscuro);
+  box-shadow: none;
+  border-color: var(--color-azul-oscuro);
 }
 
 .btn-agregar {
-    background-color: #f25c54;
-    color: white;
-    border-radius: 8px;
-    padding: 10px;
+  background-color: #f25c54;
+  color: white;
+  border-radius: 8px;
+  padding: 10px;
 }
-.btn-agregar:hover { background-color: #e04b43; color: white; }
+.btn-agregar:hover {
+  background-color: #e04b43;
+  color: white;
+}
 
 .btn-outline-prioridad {
-    border: 1px solid #dee2e6;
-    color: #6c757d;
-    background-color: white;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.9rem;
+  border: 1px solid #dee2e6;
+  color: #6c757d;
+  background-color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 .btn-check:checked + .btn-prioridad-alta {
-    background-color: rgba(239, 83, 80, 0.1);
-    border-color: var(--color-alta);
-    color: var(--color-alta);
+  background-color: rgba(239, 83, 80, 0.1);
+  border-color: var(--color-alta);
+  color: var(--color-alta);
 }
 
 .btn-check:checked + .btn-prioridad-media {
-    background-color: rgba(255, 202, 40, 0.1);
-    border-color: var(--color-media);
-    color: #d4a017; 
+  background-color: rgba(255, 202, 40, 0.1);
+  border-color: var(--color-media);
+  color: #d4a017;
 }
 
 .btn-check:checked + .btn-prioridad-baja {
-    background-color: rgba(102, 187, 106, 0.1);
-    border-color: var(--color-baja);
-    color: var(--color-baja);
+  background-color: rgba(102, 187, 106, 0.1);
+  border-color: var(--color-baja);
+  color: var(--color-baja);
+}
+
+.btn-prioridad-alta:hover {
+    background-color: rgba(239, 83, 80, 0.3) !important;
+    border-color: var(--color-alta) !important;
+    color: var(--color-alta) !important;
+}
+
+.btn-prioridad-media:hover {
+    background-color: rgba(255, 202, 40, 0.3) !important;
+    border-color: var(--color-media) !important;
+    color: #d4a017 !important;
+}
+
+.btn-prioridad-baja:hover {
+    background-color: rgba(102, 187, 106, 0.3) !important;
+    border-color: var(--color-baja) !important;
+    color: var(--color-baja) !important;
 }
 
 .card-resumen {
-    border: none;
-    border-radius: 12px;
+  border: none;
+  border-radius: 12px;
 }
-.bg-azul { background-color: var(--color-azul-medio); }
-.bg-naranja { background-color: var(--color-naranja); }
-.bg-rojo { background-color: #f25c54; }
+.bg-azul {
+  background-color: var(--color-azul-medio);
+}
+.bg-naranja {
+  background-color: var(--color-naranja);
+}
+.bg-rojo {
+  background-color: #f25c54;
+}
 
 .filter-container {
-    background-color: white;
-    border-radius: 8px;
-    
+  background-color: white;
+  border-radius: 8px;
 }
 .btn-filtro {
-    border: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #4a4a4a;
-    border-radius: 6px;
-    padding: 5px 15px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4a4a4a;
+  border-radius: 6px;
+  padding: 5px 15px;
 }
 .btn-filtro.active {
-    background-color: var(--color-azul-medio);
-    color: white;
+  background-color: var(--color-azul-medio);
+  color: white;
 }
 
 .lista-tareas-container {
-    max-height: 480px; 
-    overflow-y: auto;
+  max-height: 480px;
+  overflow-y: auto;
 }
 
 .lista-tareas-container::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 .lista-tareas-container::-webkit-scrollbar-track {
-    background: #e9e4d9;
-    border-radius: 10px;
+  background: #e9e4d9;
+  border-radius: 10px;
 }
 .lista-tareas-container::-webkit-scrollbar-thumb {
-    background-color: #c4c4c4;
-    border-radius: 10px;
+  background-color: #c4c4c4;
+  border-radius: 10px;
 }
 .lista-tareas-container::-webkit-scrollbar-thumb:hover {
-    background-color: #a0a0a0;
+  background-color: #a0a0a0;
 }
 
 .card-tarea {
-    border: none;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
 }
 
 .chk-tarea {
-    width: 1.3rem;
-    height: 1.3rem;
-    border-color: #d1d1d1;
-    cursor: pointer;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-color: #d1d1d1;
+  cursor: pointer;
 }
 .chk-tarea:checked {
-    background-color: var(--color-azul-medio);
-    border-color: var(--color-azul-medio);
+  background-color: var(--color-azul-medio);
+  border-color: var(--color-azul-medio);
 }
 
 .badge-prioridad {
-    display: inline-flex;
-    align-items: center;
-    border: 1px solid;
-    border-radius: 50rem;
-    padding: 2px 8px;
-    font-size: 0.7rem;
-    font-weight: bold;
-    background-color: white;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 50rem;
+  padding: 2px 8px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  background-color: white;
 }
 
 .badge-prioridad::before {
-    content: '';
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    margin-right: 5px;
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 5px;
 }
 
-.badge-alta { border-color: var(--color-alta); color: var(--color-alta); }
-.badge-alta::before { background-color: var(--color-alta); }
-
-.badge-media { border-color: var(--color-media); color: #d4a017; }
-.badge-media::before { background-color: var(--color-media); }
-
-.badge-baja { border-color: var(--color-baja); color: var(--color-baja); }
-.badge-baja::before { background-color: var(--color-baja); }
-
-.tarea-completada .text-strikethrough {
-    text-decoration: line-through;
-    color: var(--color-texto-strikethrough) !important;
+.badge-alta {
+  border-color: var(--color-alta);
+  color: var(--color-alta);
 }
-.tarea-completada .text-strikethrough h6,
-.tarea-completada .text-strikethrough p {
-    color: var(--color-texto-strikethrough) !important;
-}
-.tarea-completada .badge-prioridad {
-    opacity: 0.5;
+.badge-alta::before {
+  background-color: var(--color-alta);
 }
 
-.tarea-vencida {
-    background-color: #fff5f5;
-    border: 1px solid #ffe3e3;
+.badge-media {
+  border-color: var(--color-media);
+  color: #d4a017;
+}
+.badge-media::before {
+  background-color: var(--color-media);
+}
+
+.badge-baja {
+  border-color: var(--color-baja);
+  color: var(--color-baja);
+}
+.badge-baja::before {
+  background-color: var(--color-baja);
+}
+
+.card-tarea.tarea-completada {
+  opacity: 0.8;
+  background-color: #fdfdfd;
+  transition: all 0.3s ease;
+}
+
+.card-tarea.tarea-completada h6,
+.card-tarea.tarea-completada p {
+  text-decoration: line-through;
+  color: var(--color-texto-strikethrough) !important;
+}
+
+.card-tarea.tarea-completada .badge-prioridad {
+  opacity: 0.6;
+}
+
+.card-tarea.tarea-vencida {
+  background-color: #fff5f5;
+  border: 1px solid #ffe3e3;
+}
+
+.badge-vencida {
+  border-color: var(--color-alta);
+  color: var(--color-alta);
+  background-color: rgba(239, 83, 80, 0.1);
+}
+.badge-vencida::before {
+  background-color: var(--color-alta);
 }
