@@ -21,7 +21,6 @@ const mapaPrioridades = {
     radBaja: { texto: "Baja", clase: "badge-baja" }
 };
 
-
 function renderTareas() {
     contenedorLista.innerHTML = `
         <div id="sinTareasMsg" class="text-center py-5 d-none">
@@ -39,10 +38,10 @@ function renderTareas() {
     actualizarEstadisticas();
     aplicarFiltro(filtroActual);
 }
+
 function crearTarjetaEnDOM(tarea) {
     const infoPrioridad = mapaPrioridades[tarea.priority] || { texto: "Baja", clase: "badge-baja" };
-    const estaCompletada = tarea.status === 'COMPLETADA';
-
+    const estaCompletada = tarea.status === 'DONE';
     const tarjetaDiv = document.createElement("div");
     tarjetaDiv.className = `card card-tarea mb-3 ${estaCompletada ? 'tarea-completada' : ''}`;
     tarjetaDiv.dataset.taskId = tarea.id; 
@@ -56,9 +55,9 @@ function crearTarjetaEnDOM(tarea) {
                         <h6 class="mb-0 fw-bold text-contenedor">${tarea.name}</h6>
                         <span class="badge-prioridad ${infoPrioridad.clase}">${infoPrioridad.texto}</span>
                     </div>
-                    <!-- Botón de eliminar con la clase requerida delete-button -->
                     <button class="delete-button btn btn-sm btn-outline-danger border-0">
-                        <i class="fa-solid fa-trash pointer-events-none"></i>
+                        <i class="fa-solid fa-trash pointer-events-none py-1"></i>
+                        <span>Eliminar</span>
                     </button>
                 </div>
                 <p class="text-muted small mb-1 text-contenedor">${tarea.description}</p>
@@ -113,11 +112,11 @@ contenedorLista.addEventListener("click", (event) => {
     if (event.target.classList.contains("delete-button") || event.target.closest(".delete-button")) {
         const botonEliminar = event.target.closest(".delete-button");
         const parentTask = botonEliminar.closest(".card-tarea"); 
-
-        const taskId = Number(parentTask.dataset.taskId);
+        const taskId = Number(parentTask.dataset.taskId); 
 
         taskManager.deleteTask(taskId);
         taskManager.save();
+
         renderTareas();
     }
 });
@@ -126,14 +125,13 @@ contenedorLista.addEventListener("change", (event) => {
     if (event.target.classList.contains("chk-tarea")) {
         const tarjetaTarea = event.target.closest(".card-tarea");
         const taskId = Number(tarjetaTarea.dataset.taskId);
-
-        const tareaEncontrada = taskManager.tasks.find(t => t.id === taskId);
-        if (tareaEncontrada) {
-            tareaEncontrada.status = event.target.checked ? 'COMPLETADA' : 'PORHACER';
-        }
+        const task = taskManager.getTaskById(taskId);
         
-        taskManager.save(); 
-        renderTareas();    
+        if (task) {
+            task.status = event.target.checked ? 'DONE' : 'PORHACER';
+            taskManager.save();
+            renderTareas();
+        }
     }
 });
 
@@ -233,4 +231,21 @@ function activarBotonFiltro(botonActivo) {
     botonActivo.classList.add("active");
 }
 
+function cargarFechaActual() {
+    const fechaElemento = document.querySelector("#fechaHeader");
+    if (!fechaElemento) return;
+
+    const ahora = new Date();
+    const opciones = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+    };
+
+    let fechaFormateada = ahora.toLocaleDateString('es-ES', opciones);
+    fechaElemento.textContent = fechaFormateada;
+}
+
+cargarFechaActual();
 renderTareas();

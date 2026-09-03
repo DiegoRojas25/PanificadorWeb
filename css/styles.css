@@ -28,6 +28,9 @@ body {
 .header-principal {
   background-color: var(--color-azul-oscuro);
   height: 120px;
+  position: relative; /* Asegura el contexto de apilamiento */
+  z-index: 10;        /* Permite que la sombra se dibuje sobre el fondo del main */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .text-naranja {
@@ -282,4 +285,28 @@ body {
 
 #sinTareasMsg i {
     opacity: 0.5;
+}
+
+.card-custom,
+.card-resumen,
+.filter-container,
+.card-tarea{
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 12px;
+}
+
+.delete-button {
+    background-color: #f8d7da !important;
+    color: #dc3545 !important;
+    border: 1px solid #f5c2c7 !important;
+    border-radius: 6px;
+    padding: 2px 8px;
+    font-size: 0.8rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.delete-button:hover {
+    background-color: #dc3545 !important;
+    color: white !important;
+    border-color: #dc3545 !important;
 }
