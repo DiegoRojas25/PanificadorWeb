@@ -41,12 +41,15 @@ class TaskManager {
         }
 
         this.tasks = newTasks;
+        this.save();
     }
 
     save() {
         const tasksJson = JSON.stringify(this.tasks);
         localStorage.setItem('tasks', tasksJson);
-        localStorage.setItem('currentId', String(this.currentId));
+
+        const currentId = String(this.currentId);
+        localStorage.setItem('currentId', currentId);
     }
 
     load() {

@@ -102,6 +102,7 @@ formTarea.addEventListener("submit", (e) => {
     alertaError.classList.add("d-none");
 
     taskManager.addTask(data.titulo, data.descripcion, data.fecha, data.prioridadId);
+    taskManager.save();
     
     formTarea.reset();
     renderTareas(); 
